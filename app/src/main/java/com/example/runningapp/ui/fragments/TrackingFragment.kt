@@ -1,5 +1,4 @@
 package com.example.runningapp.ui.fragments
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -115,7 +114,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
         btnFinishRun.setOnClickListener {
             zoomToSeeWholeTrack()
-            //endRunAndSaveToDb()
+            endRunAndSaveToDb()
         }
 
         btnToggleRun.setOnClickListener {
@@ -228,6 +227,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     private fun zoomToSeeWholeTrack() {
         val bounds = LatLngBounds.builder()
         for (polyline in pathPoints) {
+            if (!polyline.isEmpty())
             for (pos in polyline) {
                 bounds.include(pos)
             }

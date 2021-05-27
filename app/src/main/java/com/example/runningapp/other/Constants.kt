@@ -41,6 +41,7 @@ object Constants {
 
     //SNACKBAR TEXTS FOR FAILS OR SUCCESS
     const val ENTER_ALL_VALUES=" please enter all the values"
+    const val CHANGES_MADE_SUCCESSFULLY="CHANGES_MADE_SUCCESSFULLY"
 
 
 }

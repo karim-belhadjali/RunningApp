@@ -54,7 +54,7 @@ class SetupFragment : Fragment(R.layout.fragment_setup) {
 
     private fun writeUserDetailsInSharedPreferences(): Boolean {
         val name = etName.text.toString()
-        val weight = etWeight.text.toString()
+        val weight = etWeightt.text.toString()
         if (name.isEmpty() || weight.isEmpty()) {
             return false
         }

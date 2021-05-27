@@ -46,7 +46,7 @@
         android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etWeight"
+            android:id="@+id/etWeightt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"

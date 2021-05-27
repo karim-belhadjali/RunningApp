@@ -1,14 +1,22 @@
 package com.example.runningapp.di
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
+import androidx.navigation.Navigator
 import androidx.room.Room
 import com.example.runningapp.db.classes.RunningDatabase
+import com.example.runningapp.other.Constants.KEY_NAME
+import com.example.runningapp.other.Constants.KEY_TOGGLE_FIRST_TIME
+import com.example.runningapp.other.Constants.KEY_WEIGHT
 import com.example.runningapp.other.Constants.RUNNING_DATABASE_NAME
+import com.example.runningapp.other.Constants.SHARED_PREFERENCES_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -28,5 +36,29 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRunDao(db:RunningDatabase)=db.getRunDao()
+    fun provideRunDao(db: RunningDatabase) = db.getRunDao()
+
+
+    @Singleton
+    @Provides
+    fun provideSharedPreference(@ApplicationContext app: Context) =
+        app.getSharedPreferences(SHARED_PREFERENCES_NAME, MODE_PRIVATE)
+
+    @Singleton
+    @Provides
+    fun provideFirstTime(sharedPreferences: SharedPreferences) =
+        sharedPreferences.getBoolean(KEY_TOGGLE_FIRST_TIME, true)
+
+    @Singleton
+    @Provides
+    @Named("userName")
+    fun provideUserName(sharedPreferences: SharedPreferences) =
+        sharedPreferences.getString(KEY_NAME, "") ?: ""
+
+    @Singleton
+    @Provides
+    fun provideWeight(sharedPreferences: SharedPreferences) =
+        sharedPreferences.getFloat(KEY_WEIGHT, 80f)
+
+
 }

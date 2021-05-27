@@ -193,7 +193,7 @@ class TrackingService : LifecycleService() {
 
 
         // THIS CODE IS FOR CLEARING ALL THE ACTIONS FROM THE NOTIFICATION BEFORE UPDATING IT
-        curNotificationBuilder.javaClass.getDeclaredField("mActions")!!.apply {
+        curNotificationBuilder.javaClass.getDeclaredField("mActions").apply {
             isAccessible = true
             set(curNotificationBuilder, ArrayList<NotificationCompat.Action>())
         }

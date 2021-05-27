@@ -32,5 +32,15 @@ object Constants {
     const val POLYLINE_WIDTH= 8f
     const val MAP_ZOOM= 15f
 
+    // SHARED PREFERENCE NAME AND KEYS
+    const val SHARED_PREFERENCES_NAME="sharedPref"
+    const val KEY_TOGGLE_FIRST_TIME="KEY_TOGGLE_FIRST_TIME"
+    const val KEY_NAME="KEY_NAME"
+    const val KEY_WEIGHT="KEY_WEIGHT"
+
+
+    //SNACKBAR TEXTS FOR FAILS OR SUCCESS
+    const val ENTER_ALL_VALUES=" please enter all the values"
+
 
 }

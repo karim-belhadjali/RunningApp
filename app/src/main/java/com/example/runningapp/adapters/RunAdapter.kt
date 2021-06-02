@@ -56,7 +56,7 @@ class RunAdapter : RecyclerView.Adapter<RunAdapter.RunViewHolder>() {
             tvAvgSpeed.text = avgSpeed
 
             val distanceInKmh = "${run.distanceInMeters / 1000f}km"
-            tvAvgSpeed.text = distanceInKmh
+            tvDistance.text = distanceInKmh
 
             tvTime.text = TrackingUtility.getFormattedStopWatchTime(run.timeInMillis)
 
